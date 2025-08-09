@@ -1,0 +1,614 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.container {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.app-icon {
+    width: 42px;
+    height: 42px;
+    display: block;
+    margin: 0 auto 16px auto; /* Centers and adds space below */
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+}
+
+.app-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.app-description {
+    font-size: 1rem;
+    color: #64748b;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+    flex: 1; /* ADD THIS */
+    min-height: 0; /* ADD THIS */
+}
+
+/* Form Section */
+.form-section {
+    width: 100%;
+}
+/* Modern Form Container - Replace your existing .form-container styles */
+.form-container {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    transition: all 0.3s ease;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    
+    background-size: 300% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+.form-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 25px 35px -5px rgba(0, 0, 0, 0.15),
+        0 15px 15px -5px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Modern Input Styling - adjusted for background icons */
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px 16px 52px; /* More padding for icons */
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4f9cf9;
+    box-shadow: 
+        0 0 0 4px rgba(79, 156, 249, 0.1),
+        0 8px 16px -4px rgba(79, 156, 249, 0.2);
+    transform: translateY(-1px);
+    
+}
+
+/* Keep your existing background-image icons */
+.form-group input,
+.form-group textarea {
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 18px 18px;
+}
+
+/* Your existing icon classes */
+.input-user {
+    background-image: url('user.png');
+}
+
+.input-contact {
+    background-image: url('contact.png');
+}
+
+.input-phone {
+    background-image: url('phone.png');
+}
+
+.input-blood {
+    background-image: url('blood.png');
+}
+
+.input-medical {
+    background-image: url('allergies.png');
+}
+
+/* Form Title Modern Styling */
+.form-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 32px;
+    text-align: center;
+    position: relative;
+}
+
+.form-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    
+    border-radius: 2px;
+}
+
+
+.generate-btn {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.15), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.generate-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent, rgba(255, 255, 255, 0.1));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.generate-btn:hover::before {
+    left: 100%;
+}
+
+.generate-btn:active {
+    transform: translateY(-1px) scale(1.01);
+    transition: all 0.1s ease;
+}
+
+.generate-btn:focus {
+    outline: none;
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+/* Floating Label Effect (Optional Enhancement) */
+.form-group.floating input:focus + label,
+.form-group.floating input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4f9cf9;
+    background: white;
+    padding: 0 8px;
+}
+
+/* QR Preview Section */
+.qr-preview-section {
+    width: 100%;
+}
+
+.qr-preview-container {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    height: fit-content;
+    margin-bottom: 40px; 
+}
+
+.qr-preview-icon {
+    margin-bottom: 24px;
+}
+
+.qr-placeholder {
+    width: 120px;
+    height: 120px;
+    background: #f1f5f9;
+    border-radius: 16px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 12px);
+    grid-template-rows: repeat(3, 12px);
+    gap: 4px;
+}
+
+.qr-cell {
+    width: 12px;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 2px;
+}
+
+.qr-cell.active {
+    background: #475569;
+}
+
+.qr-preview-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.qr-preview-text {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 32px;
+}
+
+/* Features */
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-icon {
+    font-size: 16px;
+    color: #4f9cf9;
+}
+
+.feature-text {
+    font-size: 14px;
+    color: #475569;
+}
+
+/* QR Results Section */
+.qr-section {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+}
+
+.qr-container {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.qr-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 32px;
+}
+
+.qr-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+#qrCodeCanvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.qr-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.action-btn.secondary {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.action-btn.secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.action-btn.tertiary {
+    background: white;
+    color: #4f9cf9;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn.tertiary:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+}
+
+.privacy-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.privacy-icon {
+    width: 32px;
+    height: 32px;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 6px;
+}
+
+.privacy-content {
+    text-align: left;
+}
+
+.privacy-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.privacy-text {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 16px;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .app-title {
+        font-size: 2rem;
+    }
+
+    .app-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+
+    .form-container,
+    .qr-preview-container {
+        padding: 24px 20px;
+    }
+
+    .qr-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .privacy-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .privacy-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.75rem;
+    }
+
+    .form-container,
+    .qr-preview-container {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .generate-btn {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container,
+.qr-preview-container,
+.qr-container {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Validation States */
+.form-group input:invalid:not(:focus):not(:placeholder-shown),
+.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+}
+
+/* Loading State */
+.generate-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.generate-btn:disabled:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(79, 156, 249, 0.3) !important;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- QR Code generation library - using local file -->
+    <script src="qrcode.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="heart.png" alt="Heart Icon" class="app-icon" />
+
+        <h1 class="app-title">ResQIt</h1>
+        <p class="app-subtitle">Your Emergency Info, Always Accessible</p>
+        <p class="app-description">
+          Generate a QR code with your emergency details that works offline
+        </p>
+      </header>
+
+      <div class="main-content">
+        <!-- Form Section -->
+        <div class="form-section" id="formSection">
+          <!-- Updated Form Section using your existing images -->
+          <div class="form-section" id="formSection">
+            <div class="form-container">
+              <h2 class="form-title">Emergency Information</h2>
+              <form id="emergencyForm" class="emergency-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Full Name"
+                    class="input-user"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="emergencyContactName"
+                    placeholder="Emergency Contact Name"
+                    class="input-contact"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="emergencyContactPhone"
+                    placeholder="Emergency Contact Phone"
+                    class="input-phone"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="bloodType"
+                    placeholder="Blood Type (e.g., A+, O-)"
+                    class="input-blood"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="Allergies"
+                    placeholder="Allergies (e.g., Peanuts, Shellfish)"
+                    class="input-medical"
+                    required
+                  />
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="generate-btn">
+                     Generate Emergency QR Code
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR Code Preview Section -->
+        <div class="qr-preview-section">
+          <div class="qr-preview-container">
+            <div class="qr-preview-icon">
+              <div class="qr-placeholder">
+                <div class="qr-grid">
+                  <div class="qr-cell"></div>
+                  <div class="qr-cell"></div>
+                  <div class="qr-cell active"></div>
+                  <div class="qr-cell"></div>
+                  <div class="qr-cell active"></div>
+                  <div class="qr-cell active"></div>
+                  <div class="qr-cell"></div>
+                  <div class="qr-cell active"></div>
+                  <div class="qr-cell active"></div>
+                </div>
+              </div>
+            </div>
+            <h3 class="qr-preview-title">QR Code Preview</h3>
+            <p class="qr-preview-text">
+              Fill out the form to generate your emergency QR code
+            </p>
+
+            <div class="features">
+              <div class="feature">
+                <span class="feature-icon">✔️</span>
+                <span class="feature-text">Works completely offline</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">✔️</span>
+                <span class="feature-text">Scannable by any QR reader</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">✔️</span>
+                <span class="feature-text">Perfect for wallet or keychain</span>
+              </div>
+            </div>
+          </div>
+          <div class="privacy-section">
+            <img src="privacy.png" alt="Privacy Icon" class="privacy-icon" />
+            <div class="privacy-content">
+              <h3 class="privacy-title">Privacy First</h3>
+              <p class="privacy-text">
+                All data is processed locally in your browser. Nothing is stored
+                on our servers. Your information stays completely private.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR Code Results Section -->
+        <div class="qr-section" id="qrSection" style="display: none">
+          <div class="qr-container">
+            <h2 class="qr-title">Your Emergency QR Code</h2>
+            <div class="qr-display">
+              <canvas id="qrCodeCanvas"></canvas>
+            </div>
+            <div class="qr-actions">
+              <button type="button" class="action-btn primary" id="downloadBtn">
+                Download PNG
+              </button>
+              <button type="button" class="action-btn secondary" id="printBtn">
+                Print Card
+              </button>
+              <button type="button" class="action-btn tertiary" id="editBtn">
+                Edit Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer"></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
