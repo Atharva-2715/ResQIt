@@ -26,7 +26,7 @@ No accounts. No servers. No internet required after generation.
 
 ## 📦 Installation
 
-1. **Clone the repo**
+ **Clone the repo**
 ```bash
 git clone https://github.com/Atharva-2715/ResQIt.git
 cd ResQIt
