@@ -34,4 +34,4 @@ cd ResQIt
 2. **Open the Project Folder**
    cd ResQIt
 
-3. **Open the index.html file in your browser.
+3. **Open the index.html file in your browser.**
